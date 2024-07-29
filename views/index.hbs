@@ -1,2 +1,21 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<hr>
+<h2>Create Post</h2>
+<form>
+    <label for="title">Title</label>
+    <input id="title" type="text">
+    <br>
+    <label for="body">Body</label>
+    <input id="body" type="text">
+    <br>
+    <br>
+    <button id="btnCreatePost" type="button">Create Post</button>
+    <br>
+    <br>
+    <span id="msgCreatePost"></span>
+</form>
+<br>
+<hr>
+<h2>Get Posts</h2>
+<button id="btnGetPosts" type="button">Get Posts</button>
+<br>
+<table id="resultTable" style="display: none;"></table>
