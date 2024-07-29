@@ -11,5 +11,8 @@ router.get('/', ctrlSite.getHomePage);
 /* GET API posts */
 router.get('/api/posts', ctrlAPI.getPosts);
 
+/* POST API create post*/
+router.post('/api/post', ctrlAPI.createPost);
+
 
 module.exports = router;

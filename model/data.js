@@ -21,7 +21,37 @@ const getData = async () => {
     return response;
 };
 
+const postData = async (data) => {
+    let post = data;
+    await fs.readFile(fileName, "utf-8")
+        .then( data => {
+            console.log("postedData: ", post);
+            console.log("postData: ", data);
+            let posts = [];
+            if(data == ""){
+                posts[0] = post;
+                console.log("post1: ", posts);
+            } else {
+                posts = JSON.parse(data);
+                posts[posts.length] = post;
+                console.log("post2: ", posts);
+            }
+            fs.writeFile(fileName, JSON.stringify(posts))           
+
+        })
+        .then(() => {
+            post.success = true;
+            console.log("**Post Data Saved Successfully** ", post);
+            post = JSON.stringify(post);
+        })
+        .catch(err => {
+            console.log("**getData encountered an error: ", err.message);
+        });
+    return post;
+}
+
 
 module.exports = {
-    getData
+    getData,
+    postData
 }
