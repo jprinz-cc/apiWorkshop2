@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
+
+const express = require('express');
+const router = express.Router();
+const ctrlSite = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', ctrlSite.getHomePage);
+
 
 module.exports = router;
